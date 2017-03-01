@@ -1,4 +1,4 @@
-function [ next_act, next_ccon, next_kgain ] = activity_iterate( dimd, dimc, act, sensory, imat, weights, prefs, ccon, kgain )
+function [ next_act, next_ccon, next_kgain ] = activity_iterate( dimd, dimc, act, sensory, weights, ccon, kgain )
 %   dimc,dimd: dimensions of controlling and sensory variables (D,C)
 %   act: current activity: 1 x P^(D+C)
 %   sensory: current sensory input (spikes): P^D x 1 (s^1_1, s^1_2, ...,
@@ -26,18 +26,14 @@ end
 % for 1D obj tracking
 mu = 0.001;
 eta = 0.01;
-kw = 1;
 numn = size(sensory, 1) / dimd;
 dimp = numn;
 
 % vectors to matrix
-mat_sensory = reshape(dimp, dimd);
+mat_sensory = reshape(sensory, dimp, dimd);
 mat_sensory = mat_sensory';
 
 %% do iteration
-
-ccon = 1; %TODO
-kgain = 0; %TODO
 
 weighed_inputs = (weights * act).^2;
 

@@ -1,16 +1,16 @@
-function [ spikes, firing_rates ] = gen_sensory_signals( p, sti, steps )
+function [ spikes, firing_rates ] = gen_sensory_signals( preferences, sti, steps )
 %   p: number of neurons or preferred stimulis of neurons
 %   sti: the stimuli value
 
 %% handle the parameters
 
 % prefs: a row vector
-if numel(p) == 1
-    prefs = gen_preferences(p);
-elseif size(p, 1) == 1
-    prefs = p;
+if numel(preferences) == 1
+    prefs = gen_preferences(preferences);
+elseif size(preferences, 1) == 1
+    prefs = preferences;
 else
-    prefs = p';
+    prefs = preferences';
 end
 
 numn = size(prefs, 2);
