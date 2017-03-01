@@ -1,4 +1,5 @@
 function [ next_act, next_ccon, next_kgain ] = activity_iterate( dimd, dimc, act, sensory, weights, ccon, kgain )
+% activity_iterate( dimd, dimc, act, sensory, weights, ccon, kgain )
 %   dimc,dimd: dimensions of controlling and sensory variables (D,C)
 %   act: current activity: 1 x P^(D+C)
 %   sensory: current sensory input (spikes): P^D x 1 (s^1_1, s^1_2, ...,

@@ -7,7 +7,9 @@ function [ prefs ] = gen_preferences( num )
 %     prefs = 1;
 % end
 
-prefs = -pi : (2*pi/(num-1)) : pi;
+% prefs = -pi : (2*pi/(num-1)) : pi;
+prefs = -pi : (2*pi/num) : pi;
+prefs = prefs(1:end-1);
 
 end
 

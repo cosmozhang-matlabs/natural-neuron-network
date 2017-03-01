@@ -12,7 +12,7 @@ end
 
 kw = 1;
 
-tprefs = imat * [ prefs ; zeros(1,size(prefs,2)) ]; tprefs = tprefs(1:end-1); % transformed preferences
+tprefs = imat * [ prefs ; (zeros(1,size(prefs,2))+1) ]; tprefs = tprefs(1:end-1, :); % transformed preferences
 
 weight = zeros(numn^(dimd+dimc));
 
