@@ -4,9 +4,11 @@ function [ predictions ] = act_predict( acts, prefs )
 %   prefs: (D+C) x P^(D+C)
 %   predictions: (D+C) vector
 
-sum_acts = sum(acts);
-predictions = prefs * acts' ./ sum_acts;
+% sum_acts = sum(acts);
+% predictions = prefs * acts' ./ sum_acts;
 
+[~,max_pos] = max(acts);
+predictions = prefs(:, max_pos);
 
 end
 

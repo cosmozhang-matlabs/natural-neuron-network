@@ -10,7 +10,7 @@ if nargin < 5
     prefs = gen_func_preferences(dimd+dimc, numn);
 end
 
-kw = 1;
+kw = 3;
 
 tprefs = imat * [ prefs ; (zeros(1,size(prefs,2))+1) ]; tprefs = tprefs(1:end-1, :); % transformed preferences
 
