@@ -19,6 +19,7 @@ weight = zeros(numn^(dimd+dimc));
 for i = 1:(numn^(dimd+dimc))
     weight(i,:) = exp( kw * sum( cos( repmat(tprefs(1:dimd,i), [1,(numn^(dimd+dimc))]) - prefs(1:dimd,:) ) , 1 ) - dimd );
 end
+weight = weight';
 
 % prefm = reshape(transpose(prefs), zeros(1,dimd+dimc)+numn, dimd+dimc);
 % tprefm = reshape(transpose(tprefs), zeros(1,dimd+dimc)+numn, dimd+dimc);
