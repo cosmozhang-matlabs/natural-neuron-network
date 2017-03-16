@@ -23,7 +23,11 @@ for i = 1:RCRT_STEPS
     acts = activity_iterate(dimd, dimc, acts, zeros(1, numn^dimd), eyeWeights, 1, 0);
 end
 sum_acts = sum(acts);
-predictions = prefs * acts ./ sum_acts;
+cos_total_acts = cos(prefs) * acts ./ sum_acts;
+sin_total_acts = sin(prefs) * acts ./ sum_acts;
+act_phase = atan( sin_total_acts / cos_total_acts );
+% predictions = prefs * acts ./ sum_acts;
+predictions = act_phase;
 
 end
 
